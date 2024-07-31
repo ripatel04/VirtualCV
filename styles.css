@@ -77,14 +77,21 @@ header {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.5s; /* Add fade-in animation */
 }
+#home h1, #home h2 {
+    color: black; /* Black for front page headings */
+}
 
+/* Style for section headings */
+.portfolio-section h2 {
+    color: blue; /* Blue for section headings */
+}
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
 h1, h2, h3 {
-    color: #000000; /* Keep headings in black for visibility */
+    color: #2e1aca; /* Keep headings in black for visibility */
 }
 
 ul {

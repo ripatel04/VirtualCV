@@ -25,17 +25,58 @@
     
     <main>
         <section id="home">
-        <div class="profile-container">
-            <img src="pic.jpg" alt="Riya Patel" class="profile-image">
-            <div class="introduction">
-                
-                <h1>Hey! I'm Riya Patel</h1>
-                <h2>Aspiring Software Developer</h2>
-                <p>A final year BSc in Information Technology student at North-West University, with a strong passion for technology and problem-solving. My academic journey has equipped me with a solid foundation in programming, database management, and system analysis.</p>
-                <p>I invite you to explore my portfolio to see examples of my work and the skills I bring to the table. Let's connect on LinkedIn to discuss potential opportunities!</p>
+            <div class="profile-container">
+                <img src="pic.jpg" alt="Riya Patel" class="profile-image">
+                <div class="introduction">
+                    <h1 class="slide-in-text">Hey! I'm Riya Patel</h1>
+                    <h2>Aspiring Software Developer</h2>
+                    <p>A final year BSc in Information Technology student at North-West University, with a strong passion for technology and problem-solving. My academic journey has equipped me with a solid foundation in programming, database management, and system analysis.</p>
+                    <p>I invite you to explore my portfolio to see examples of my work and the skills I bring to the table. Let's connect on LinkedIn to discuss potential opportunities!</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <style>
+            @keyframes slideIn {
+                0% {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        
+            .slide-in-text {
+                font-family: 'Arial Black', sans-serif;
+                font-size: 48px;
+                font-weight: bold;
+                color: #FF5733;
+                animation: slideIn 1s ease forwards; /* Slide in effect */
+            }
+        </style>
+        
+        <style>
+            @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% {
+                    transform: translateY(0);
+                }
+                40% {
+                    transform: translateY(-20px);
+                }
+                60% {
+                    transform: translateY(-10px);
+                }
+            }
+        
+            .animated-text {
+                font-family: 'Arial Black', sans-serif;
+                font-size: 48px;
+                font-weight: bold;
+                color: #FF5733;
+                animation: bounce 1s infinite;
+            }
+        </style>
         <section id="resume" class="portfolio-section" style="display: none;">
             <h2>Resume/CV</h2>
             <p><strong>Location:</strong> Lenasia, Ext 3, South Africa</p>
@@ -66,13 +107,13 @@
                 <li>Badminton</li>
             </ul>
                 <div class="images-container">
+                    <img src="Music.png" alt="Music" class="interest-image">
                     <img src="Dancing.png" alt="Dancing" class="interest-image">
                     <img src="Volleyball.png" alt="Volleyball" class="interest-image">
                     <img src="Bootcamp.png" alt="Bootcamp" class="interest-image">
                 </div>
             </div>
         </section>
-
         <section id="skills" class="portfolio-section" style="display: none;">
             <h2>Skills</h2>
             <div class="skills-container">
@@ -101,77 +142,79 @@
             </div>
         </section>
 
+        
         <section id="projects" class="portfolio-section" style="display: none;">
             <h2>Projects</h2>
-            <ul>
-                <li>
-                    <strong>Database Implementation for Company Operations</strong><br>
-                    Jan 2024 – Jun 2024<br>
-                    Oracle SQL Developer: 
-                    <a href="https://github.com/ripatel04/Database-Implementation-" target="_blank">View on GitHub</a>
-                </li>
-                <li>
-                    <strong>Computer Networks and Messaging App Development</strong><br>
-                    Jan 2024 – Jun 2024<br>
-                    Cisco Packet Tracer, Windows Messaging App: 
-                    <a href="https://github.com/ripatel04/Computer-Networks-Messaging-App" target="_blank">View on GitHub</a>
-                </li>
-                <li>
-                    <strong>System Analysis & Design</strong><br>
-                    Jan 2023 – Dec 2023<br>
-                    Physical design, development, and implementation of an Information System: 
-                    <a href="https://github.com/ripatel04/System-Analysis-Design-Project" target="_blank">View on GitHub</a>
-                </li>
-                <li>
-                    <strong>Windows & Web Application</strong><br>
-                    Jan 2023 – Jun 2023<br>
-                    Visual Studio, ASP.NET framework: 
-                    <a href="https://github.com/ripatel04/Windows-Web-Application-/tree/main" target="_blank">View on GitHub</a>
-                </li>
-                <li>
-                    <strong>Encryption & Decryption</strong><br>
-                    Jan 2023 – Jun 2023<br>
-                    Java: 
-                    <a href="https://github.com/ripatel04/Encryption-Decryption-Project" target="_blank">View on GitHub</a>
-                </li>
-                <li>
-                    <strong>PAT Assignment</strong><br>
-                    Jan 2021 – Dec 2021<br>
-                    Research and information management skills: 
-                    <a href="https://github.com/ripatel04/PAT-Assignment" target="_blank">View on GitHub</a>
-                </li>
-            </ul>
+            <div class="projects-container">
+                <ul class="project-list">
+                    <li>
+                        <strong>Database Implementation for Company Operations</strong><br>
+                        <span class="project-date">Jan 2024 – Jun 2024</span><br>
+                        Design and implement an operational database using Oracle SQL Developer: 
+                        <a href="https://github.com/ripatel04/Database-Implementation-" target="_blank">View on GitHub</a>
+                    </li>
+                    <li>
+                        <strong>Computer Networks and Messaging App Development</strong><br>
+                        <span class="project-date">Jan 2024 – Jun 2024</span><br>
+                        Design and implementation of a network infrastructure using Cisco Packet Tracer<br>
+                        and creation of a text messaging app for windows:
+                        <a href="https://github.com/ripatel04/Computer-Networks-Messaging-App" target="_blank">View on GitHub</a>
+                    </li>
+                    <li>
+                        <strong>System Analysis & Design</strong><br>
+                        <span class="project-date">Jan 2023 – Dec 2023</span><br>
+                        Physical design, development, and implementation of an Information System: 
+                        <a href="https://github.com/ripatel04/System-Analysis-Design-Project" target="_blank">View on GitHub</a>
+                    </li>
+                    <li>
+                        <strong>Windows & Web Application</strong><br>
+                        <span class="project-date">Jan 2023 – Jun 2023</span><br>
+                        Visual Studio, ASP.NET framework: 
+                        <a href="https://github.com/ripatel04/Windows-Web-Application-/tree/main" target="_blank">View on GitHub</a>
+                    </li>
+                    <li>
+                        <strong>Encryption & Decryption</strong><br>
+                        <span class="project-date">Jan 2023 – Jun 2023</span><br>
+                        Algorithmn method with java as a programming language: 
+                        <a href="https://github.com/ripatel04/Encryption-Decryption-Project" target="_blank">View on GitHub</a>
+                    </li>
+                    <li>
+                        <strong>PAT Assignment</strong><br>
+                        <span class="project-date">Jan 2021 – Dec 2021</span><br>
+                        Research and information management skills: 
+                        <a href="https://github.com/ripatel04/PAT-Assignment" target="_blank">View on GitHub</a>
+                    </li>
+                </ul>
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">Jan 2024 - Jun 2024</div>
+                            <div class="timeline-project">Computer Networks</div>
+                            <div class="timeline-project">Database Implementation</div>
+                            <div class="timeline-circle"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Jan 2023 - Dec 2023</div>
+                            <div class="timeline-project">System Analysis & Design</div>
+                            <div class="timeline-circle"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Jan 2023 - Jun 2023</div>
+                            <div class="timeline-project">Encryption & Decryption</div>
+                            <div class="timeline-project">Windows & Web App</div>
+                            <div class="timeline-circle"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Jan 2021 - Dec 2021</div>
+                            <div class="timeline-project">PAT Assignment</div>
+                            <div class="timeline-circle"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
         </section>
-
-        <section id="certifications" class="portfolio-section" style="display: none;">
-            <h2>Certifications and Awards</h2>
-            <ul>
-                <li>Golden Key International Honour Society Member (2024).</li>
-                <li>Certificate of training in Tech Support.</li>
-                <li>Certificate of training in Digital Marketing.</li>
-                <li>National Senior Certificate (NSC).</li>
-                <li>First Aid Training Level 1,2 & 3.</li>
-                <li>Knowledge Network 5 Level Diploma Program.</li>
-                <li>Certificate of attendance for Job Shadowing.</li>
-                <li>2nd Place, Gujarati School.</li>
-            </ul>
-        </section>
-
-        <section id="references" class="portfolio-section" style="display: none;">
-            <h2>References</h2>
-            <ul>
-                <li>
-                    <strong>Salsabil Silvee</strong><br>
-                    Business Development Executive, GAOTek<br>
-                    Email: <a href="mailto:salsabilsilvee15@gmail.com">salsabilsilvee15@gmail.com</a>
-                </li>
-                <li>
-                    <strong>Elena M.A</strong><br>
-                    Tech Manager, GAOTek<br>
-                    Email: <a href="mailto:mazumdereka5111@gmail.com">mazumdereka5111@gmail.com</a>
-                </li>
-            </ul>
-        </section>
+        
 
         <section id="contact" class="portfolio-section" style="display: none;">
             <h2>Contact Information</h2>

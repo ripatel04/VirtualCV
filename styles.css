@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #4747a1, #62ddeb); /* Soft gradient background */
-    color: #333;
+    color: #000;
     padding-bottom: 60px; /* Space for the fixed footer */
 }
 
@@ -143,12 +143,12 @@ p {
     margin-top: 20px;
 }
 
-.interests-list {
-    list-style-type: disc; /* Use bullet points */
-    padding: 20px; /* Removes default padding */
-    margin-right: 20px; /* Add space between the list and images */
-}
 
+.interests-list {
+    margin-top: -10px; /* Adjust the value as needed */
+    list-style-type: disc; /* Remove the default bullet points */
+    padding-left: 20px; /* Remove the default padding-left */
+}
 .interests-list li {
     margin-bottom: 10px; /* Space between list items */
 }
@@ -157,6 +157,7 @@ p {
     display: flex; /* Use flexbox for horizontal alignment */
     justify-content: center; /* Center align the images horizontally */
     flex-wrap: wrap; /* Allow images to wrap to the next line if necessary */
+    padding-top: 25px;
 }
 
 .interest-image {
@@ -183,4 +184,124 @@ footer * {
 }
 main {
     margin-bottom: 80px; /* Space for footer */
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-list {
+    list-style-type: none;
+    padding: 0;
+    width: 60%;
+}
+
+.project-list li {
+    margin-bottom: 20px;
+}
+
+.project-date {
+    font-weight: bold;
+    color: #4A90E2;
+    margin-right: 10px;
+}
+
+.timeline-container {
+    width: 35%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.timeline {
+    border-left: 4px solid #4A90E2;
+    border-radius: 4px;
+    padding-left: 30px;
+    position: relative;
+    animation: slideIn 1s ease forwards;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: #4A90E2;
+    margin-right: 10px;
+}
+
+.timeline-month {
+    font-weight: bold;
+    color: #4A90E2;
+    margin-top: 5px;
+}
+
+.timeline-project {
+    font-size: 0.9rem;
+    padding-left: 10px;
+}
+
+.timeline-circle {
+    width: 20px;
+    height: 20px;
+    background-color: #4A90E2;
+    border-radius: 50%;
+    position: absolute;
+    left: -38px;
+    top: 0;
+    animation: scaleIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.timeline-circle {
+    width: 20px;
+    height: 20px;
+    background-color: #4A90E2;
+    border-radius: 50%;
+    position: absolute;
+    left: -38px;
+    top: 0;
+    transition: transform 0.3s;
+}
+
+.timeline-item:hover .timeline-circle {
+    transform: scale(1.5);
+}
+
+.timeline-content {
+    padding-left: 30px;
+    transition: background-color 0.3s;
+}
+
+.timeline-item:hover .timeline-content {
+    background-color: #f0f8ff; /* Light background on hover */
 }

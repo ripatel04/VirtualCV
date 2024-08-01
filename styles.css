@@ -363,3 +363,52 @@ main {
     visibility: visible; /* Show tooltip on hover */
     opacity: 1; /* Make tooltip visible */
 }
+
+.cv-link {
+    color: #3498db; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+}
+
+.cv-link:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #2980b9; /* Darker shade on hover */
+}
+.cv-link {
+    margin-left: 550px; /* Push the link to the right */
+}
+.resume-info {
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Space between location and link */
+    align-items: center; /* Center align items vertically */
+}
+.cv-link a {
+    color: #3498db; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+    font-size: 1.2em; /* Increase font size */
+    font-family: 'Arial', sans-serif; /* Change font family */
+    position: relative; /* Position for animation */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transform */
+}
+
+.cv-link a:hover {
+    color: #2980b9; /* Darker shade on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.cv-link a::after {
+    content: ''; /* Create a pseudo-element for animation */
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Position below the text */
+    width: 0;
+    height: 2px;
+    background: #2980b9; /* Color of the underline */
+    transition: width 0.3s, left 0.3s; /* Smooth transition */
+}
+
+.cv-link a:hover::after {
+    width: 100%; /* Full width on hover */
+    left: 0; /* Align to the left */
+}

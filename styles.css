@@ -209,13 +209,19 @@ p {
     flex-wrap: wrap; /* Allow images to wrap to the next line if necessary */
     padding-top: 25px;
 }
-
+.smaller-image {
+    width: 120px; /* Adjust the width to make this image smaller */
+    height: 120px; /* Adjust the height to make this image smaller */
+    /* You can also use padding or margin if needed */
+    object-fit: cover; /* Maintain the aspect ratio */
+}
 .interest-image {
-    width: 100px; /* Set the width of the images */
-    height: 100px; /* Set the height of the images */
-    border-radius: 50%; /* Makes the images circular */
-    object-fit: cover; /* Ensures the image covers the area */
+    width: 120px; /* Set the width of the images to a smaller size */
+    height: 120px; /* Set the height of the images to the same value for squares */
+    border-radius: 10px; /* Optional: Rounded corners */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
     margin: 0 10px 10px 0; /* Add some space between the images */
+    
 }
 
 footer {
@@ -445,6 +451,7 @@ main {
     color: #2980b9; /* Darker shade on hover */
     transform: scale(1.1); /* Slightly enlarge on hover */
 }
+
 .cv-link a::after {
     content: ''; /* Create a pseudo-element for animation */
     position: absolute;

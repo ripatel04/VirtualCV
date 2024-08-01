@@ -89,12 +89,11 @@
             </ul>
                 <div class="images-container">
                     <img src="Internship.png" alt="Internship" class="interest-image">
-                    <img src="Volunteer.png" alt="Volunteer" class="interest-image">
+                    <img src="Volunteer.jpg" alt="Volunteer" class="interest-image">
                     <img src="Uni.png" alt="Uni" class="interest-image">
                     <img src="Music.png" alt="Music" class="interest-image">
                     <img src="Dancing.png" alt="Dancing" class="interest-image">
                     <img src="Volleyball.png" alt="Volleyball" class="interest-image">
-                    <img src="Jodshadowing.png" alt="Jobshadowing" class="interest-image">
                     <img src="School.png" alt="School" class="interest-image">
                 </div>
             </div>
@@ -239,9 +238,9 @@
         <section id="contact" class="portfolio-section" style="display: none;">
             <h2>Contact Information</h2>
             <p>Let get in touch!</p>
-            <p><strong>Phone:</strong> (+27) 848112525</p>
-            <p><strong>Email:</strong> <a href="mailto:rp009108@gmail.com">rp009108@gmail.com</a></p>
-            <p><strong>Location:</strong> Johannesburg, South Africa</p>
+            <li><strong>Phone:</strong> (+27) 848112525</li>
+            <li><strong>Email:</strong> <a href="mailto:rp009108@gmail.com">rp009108@gmail.com</a></li>
+            <li><strong>Location:</strong> Johannesburg, South Africa</li>
             <div class="social-icons">
                 <div class="tooltip">
                     <a href="https://linkedin.com/in/riya-patel-2b89702a8" target="_blank">
@@ -269,24 +268,33 @@
         <p>&copy; 2024 Riya Patel. All Rights Reserved.</p>
     </footer>
 
-
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.portfolio-section');
-            sections.forEach(section => {
-                section.style.display = 'none'; // Hide all sections
-            });
-            document.getElementById(sectionId).style.display = 'block'; // Show the selected section
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
-        }
-
-        // Initially hide all sections except the introduction
-        document.querySelectorAll('.portfolio-section').forEach(section => {
-            section.style.display = 'none'; // Hide all sections initially
+<script>// Function to show a specific section
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.portfolio-section');
+        sections.forEach(section => {
+            section.style.display = 'none'; // Hide all sections
         });
-
-        // Optionally show the first section by default
-        // document.getElementById('resume').style.display = 'block'; // Uncomment if you want to show the resume section by default
+        document.getElementById(sectionId).style.display = 'block'; // Show the selected section
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
+        
+        // Apply animation to images in the selected section
+        const images = document.querySelectorAll(`#${sectionId} .interest-image`);
+        images.forEach((image, index) => {
+            setTimeout(() => {
+                image.classList.add('slide-down');
+            }, index * 500); // Delay each image by 300ms
+        });
+    }
+    
+    // Initially hide all sections except the introduction
+    document.querySelectorAll('.portfolio-section').forEach(section => {
+        section.style.display = 'none'; // Hide all sections initially
+    });
+    
+    // Optionally show the first section by default
+    document.getElementById('home').style.display = 'block'; // Show the home section by default
+    
     </script>
+    
 </body>
 </html>

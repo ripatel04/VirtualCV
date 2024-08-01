@@ -48,11 +48,22 @@ header {
     background-color: #357ABD; /* Darker blue on hover */
 }
 
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5); /* Start at 50% size */
+        opacity: 0; /* Start fully transparent */
+    }
+    to {
+        transform: scale(1); /* End at 100% size */
+        opacity: 1; /* End fully visible */
+    }
+}
 .profile-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     margin: 40px 0; /* Space above and below */
+    animation: zoomIn 1s ease-in-out; /* Apply the animation */
 }
 
 .profile-image {
@@ -104,6 +115,8 @@ ul li {
 
 p {
     color: #000; /* Change the color to solid black */
+    font-size: 16px; /* Adjust the size as needed */
+    
 }
 
 .centered-underline {
@@ -185,38 +198,25 @@ p {
 .programming-container li, .soft-skills-container li {
     margin: 10px 0; /* Space between list items */
 }
-
-.interests-container {
-    display: flex; /* Use flexbox for horizontal alignment */
-    justify-content: space-between; /* Space between the list and images */
-    align-items: flex-start; /* Align items at the start */
-    margin-top: 20px;
-}
-
-
-.interests-list {
-    margin-top: -10px; /* Adjust the value as needed */
-    list-style-type: disc; /* Remove the default bullet points */
-    padding-left: 20px; /* Remove the default padding-left */
-}
-.interests-list li {
-    margin-bottom: 10px; /* Space between list items */
-}
-
 .images-container {
     display: flex; /* Use flexbox for horizontal alignment */
     justify-content: center; /* Center align the images horizontally */
     flex-wrap: wrap; /* Allow images to wrap to the next line if necessary */
     padding-top: 25px;
-}
-
-.interest-image {
-    width: 120px; /* Set the width of the images to a smaller size */
-    height: 120px; /* Set the height of the images to the same value for squares */
+}.interest-image {
+    width: 120px; /* Set the width of the images */
+    height: 120px; /* Set the height of the images */
     border-radius: 10px; /* Optional: Rounded corners */
     object-fit: cover; /* Ensure the image covers the area without distortion */
     margin: 0 10px 10px 0; /* Add some space between the images */
-    
+    opacity: 0; /* Start invisible */
+    transform: translateY(-20px); /* Start slightly above */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+}
+
+.slide-down {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move to original position */
 }
 
 footer {
@@ -254,7 +254,7 @@ main {
 
 .project-date {
     font-weight: bold;
-    color: #4A90E2;
+    color: #6711f3;
     margin-right: 10px;
 }
 

@@ -305,3 +305,61 @@ main {
 .timeline-item:hover .timeline-content {
     background-color: #f0f8ff; /* Light background on hover */
 }
+
+.portfolio-section a {
+    text-decoration: none; /* Remove underline */
+    color: #4A90E2; /* Link color */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.portfolio-section a:hover {
+    color: #357ABD; /* Darker shade on hover */
+}
+
+.portfolio-section i {
+    margin-right: 5px; /* Space between icon and text */
+}
+.social-icons {
+    display: flex;
+    gap: 20px; /* Space between icons */
+    margin-top: 10px; /* Space above icons */
+}
+
+.social-icons a {
+    text-decoration: none; /* Remove underline */
+    color: #4A90E2; /* Icon color */
+    font-size: 36px; /* Increased icon size */
+    transition: color 0.3s, transform 0.3s; /* Smooth color and transform transition */
+}
+
+.social-icons a:hover {
+    color: #357ABD; /* Darker shade on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 80px; /* Tooltip width */
+    background-color: #555; /* Tooltip background color */
+    color: #fff; /* Tooltip text color */
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    margin-left: -40px; /* Center the tooltip */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible; /* Show tooltip on hover */
+    opacity: 1; /* Make tooltip visible */
+}

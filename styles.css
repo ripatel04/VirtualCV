@@ -57,8 +57,7 @@ header {
         transform: scale(1); /* End at 100% size */
         opacity: 1; /* End fully visible */
     }
-}
-.profile-container {
+}.profile-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -78,7 +77,6 @@ header {
 .introduction {
     max-width: 600px; /* Limit width for better readability */
 }
-
 .portfolio-section {
     display: none; /* Hide all sections by default */
     padding: 20px;
@@ -565,6 +563,14 @@ main {
     }
 
     .introduction {
-        font-size: 14px; /* Smaller font size for mobile */
+        text-align: center; /* Center text for better readability */
+        max-width: 90%; /* Limit width for better fit on mobile */
+    }
+}
+@media (max-width: 768px) {
+    .cv-link {
+        margin-left: 20px; /* Adjust margin for mobile screens */
+        margin-right: 20px; /* Add some right margin */
+        text-align: center; /* Center the link on mobile */
     }
 }

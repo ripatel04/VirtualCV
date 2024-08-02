@@ -462,3 +462,34 @@ main {
     width: 100%; /* Full width on hover */
     left: 0; /* Align to the left */
 }
+.floating-icons {
+    position: fixed;
+    right: 20px; /* Distance from the right edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center the icons vertically */
+    display: flex; /* Use flexbox for horizontal alignment */
+    flex-direction: column; /* Stack icons vertically */
+    gap: 15px; /* Space between icons */
+    z-index: 1000;
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Disable pointer events */
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+.floating-icons.show {
+    opacity: 1; /* Show when .show class is added */
+    pointer-events: auto; /* Enable pointer events */
+}
+
+.floating-icons i {
+    font-size: 36px;
+    color: #4A90E2;
+    transition: transform 0.3s;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(-5px); }
+    50% { transform: translateY(5px); }
+    100% { transform: translateY(-5px); }
+}

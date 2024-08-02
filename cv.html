@@ -7,6 +7,64 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #4747a1, #62ddeb);
+        color: #000;
+        padding-bottom: 60px; /* Space for the fixed footer */
+    }
+
+    .portfolio-section {
+        display: none; /* Hide all sections by default */
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9); /* Light background for better contrast */
+        margin: 20px; /* Add margin around sections */
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .certifications-container {
+        display: flex; /* Use flexbox to align items */
+        align-items: flex-start; /* Align items at the start */
+    }
+
+    .certifications-list {
+        flex: 1; /* Allow the list to take available space */
+    }
+
+    .floating-icons {
+        display: flex; /* Align icons in a row */
+        flex-direction: row; /* Align icons horizontally */
+        gap: 15px; /* Space between icons */
+        z-index: 1000;
+        opacity: 0; /* Initially hidden */
+        pointer-events: none; /* Disable pointer events */
+        transition: opacity 0.3s; /* Smooth transition */
+        margin-left: 20px; /* Space between list and icons */
+    }
+
+    .floating-icons.show {
+        opacity: 1; /* Show when .show class is added */
+        pointer-events: auto; /* Enable pointer events */
+    }
+
+    .floating-icons i {
+        font-size: 36px;
+        color: #4A90E2;
+        transition: transform 0.3s;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(-5px); }
+        50% { transform: translateY(5px); }
+        100% { transform: translateY(-5px); }
+    }
+    </style>
 </head>
 <body>
     <header>
@@ -204,19 +262,50 @@
                 </div>
             </div>
         </section>
+        
         <section id="certifications" class="portfolio-section" style="display: none;">
             <h2>Certifications and Awards</h2>
             <ul>
-                <li>Golden Key International Honour Society Member (2024).</li>
-                <li>Certificate of training in Tech Support.</li>
-                <li>Certificate of training in Digital Marketing.</li>
-                <li>National Senior Certificate (NSC).</li>
-                <li>First Aid Training Level 1,2 & 3.</li>
-                <li>Knowledge Network 5 Level Diploma Program.</li>
-                <li>Certificate of attendance for Job Shadowing.</li>
-                <li>2nd Place, Gujarati School.</li>
+                <li><i class="fas fa-certificate"></i> Golden Key International Honour Society Member (2024).</li>
+                <li><i class="fas fa-graduation-cap"></i> Certificate of training in Tech Support.</li>
+                <li><i class="fas fa-graduation-cap"></i> Certificate of training in Digital Marketing.</li>
+                <li><i class="fas fa-certificate"></i> National Senior Certificate (NSC).</li>
+                <li><i class="fas fa-first-aid"></i> First Aid Training Level 1,2 & 3.</li>
+                <li><i class="fas fa-desktop"></i> Knowledge Network 5 Level Diploma Program.</li>
+                <li><i class="fas fa-file-alt"></i> Certificate of attendance for Job Shadowing.</li>
+                <li><i class="fas fa-medal"></i> 2nd Place, Gujarati School.</li>
             </ul>
         </section>
+
+        <div class="floating-icons" id="floating-icons">
+                    <i class="fas fa-certificate" title="Certification"></i>
+                    <i class="fas fa-laptop" title="Tech Support"></i>
+                    <i class="fas fa-graduation-cap" title="Education"></i>
+                    <i class="fas fa-desktop" title="Knowledge Network"></i>
+                    <i class="fas fa-first-aid" title="First Aid Training"></i>
+                    <i class="fas fa-file-alt" title="Job Shadowing"></i>
+                    <i class="fas fa-medal" title="Awards"></i>
+                </div>
+       
+        <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .portfolio-section {
+            animation: fadeIn 0.5s ease forwards; /* Apply fade-in animation */
+        }
+        
+        ul li {
+            transition: transform 0.3s, color 0.3s; /* Smooth transition */
+        }
+        
+        ul li:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            color: #4A90E2; /* Change color on hover */
+        }
+        </style>
 
         <section id="references" class="portfolio-section" style="display: none;">
             <h2>References</h2>
@@ -268,33 +357,35 @@
         <p>&copy; 2024 Riya Patel. All Rights Reserved.</p>
     </footer>
 
-<script>// Function to show a specific section
-    function showSection(sectionId) {
-        const sections = document.querySelectorAll('.portfolio-section');
-        sections.forEach(section => {
-            section.style.display = 'none'; // Hide all sections
-        });
-        document.getElementById(sectionId).style.display = 'block'; // Show the selected section
-        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
+    <script>
+      // Function to show a specific section
+      function showSection(sectionId) {
+            const sections = document.querySelectorAll('.portfolio-section');
+            sections.forEach(section => {
+                section.style.display = 'none'; // Hide all sections
+            });
+            document.getElementById(sectionId).style.display = 'block'; // Show the selected section
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
+            
+            // Show floating icons when certifications section is displayed
+            if (sectionId === 'certifications') {
+                const floatingIcons = document.getElementById('floating-icons');
+                floatingIcons.classList.add('show');
+            }
+        }
         
-        // Apply animation to images in the selected section
-        const images = document.querySelectorAll(`#${sectionId} .interest-image`);
-        images.forEach((image, index) => {
-            setTimeout(() => {
-                image.classList.add('slide-down');
-            }, index * 500); // Delay each image by 300ms
+        // Initially hide all sections except the introduction
+        document.querySelectorAll('.portfolio-section').forEach(section => {
+            section.style.display = 'none'; // Hide all sections initially
         });
-    }
-    
-    // Initially hide all sections except the introduction
-    document.querySelectorAll('.portfolio-section').forEach(section => {
-        section.style.display = 'none'; // Hide all sections initially
-    });
-    
-    // Optionally show the first section by default
-    document.getElementById('home').style.display = 'block'; // Show the home section by default
-    
+        
+        // Optionally show the first section by default
+        document.getElementById('home').style.display = 'block'; // Show the home section by default
+        
     </script>
+</body>
+</html>
+
     
 </body>
 </html>

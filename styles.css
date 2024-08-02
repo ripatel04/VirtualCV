@@ -493,41 +493,46 @@ main {
     color: black; /* Change the color to black */
     margin: 0 10px;
 }
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-top: 10px; /* Adjust spacing above buttons */
+}
+
+.button-container button {
+    margin: 0 10px; /* Space between buttons */
+    padding: 10px 20px; /* Button padding */
+    background-color: #4a90e2; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+/* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
-    .profile-container {
-        flex-direction: column; /* Stack image and text vertically */
-        align-items: center; /* Center align items */
-        margin: 20px 0; /* Adjust margin for mobile */
+    .header-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
     }
 
-    .profile-image {
-        margin-right: 0; /* Remove right margin */
-        margin-bottom: 20px; /* Add space below the image */
-        width: 200px; /* Adjust size for mobile */
-        height: 200px; /* Adjust size for mobile */
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons */
+        margin-top: 20px; /* Adjust spacing above buttons */
     }
 
-    .introduction {
-        text-align: center; /* Center text for better readability */
-        max-width: 90%; /* Limit width for better fit on mobile */
+    .button-container button {
+        width: 100%; /* Full width on mobile */
+        margin: 10px 0; /* Space between buttons */
+        padding: 12px; /* Adjust padding for better fit */
     }
 }
 
 @media (max-width: 480px) {
     .header-content h1 {
         font-size: 24px; /* Smaller font size for mobile */
-    }
-
-    .button-container button {
-        padding: 12px; /* Reduced padding for better fit */
-    }
-
-    .profile-image {
-        width: 150px; /* Further reduce size for very small screens */
-        height: 150px; /* Further reduce size for very small screens */
-    }
-
-    .introduction {
-        font-size: 14px; /* Smaller font size for mobile */
     }
 }

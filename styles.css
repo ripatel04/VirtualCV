@@ -495,7 +495,7 @@ main {
 }
 .button-container {
     display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
+    justify-content: flex-end; /* Align buttons to the right on larger screens */
     margin-top: 10px; /* Adjust spacing above buttons */
 }
 
@@ -508,8 +508,12 @@ main {
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s; /* Smooth transition */
-    white-space: nowrap; /* Prevent button text from wrapping */
 }
+
+.button-container button:hover {
+    background-color: #357ABD; /* Darker blue on hover */
+}
+
 /* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
     .header-content {
@@ -521,6 +525,7 @@ main {
         flex-direction: column; /* Stack buttons vertically */
         align-items: center; /* Center buttons */
         margin-top: 20px; /* Adjust spacing above buttons */
+        width: 100%; /* Ensure the button container takes full width */
     }
 
     .button-container button {

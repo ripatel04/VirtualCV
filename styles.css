@@ -494,3 +494,30 @@ main {
     color: black; /* Change the color to black */
     margin: 0 10px;
 }
+/* Styles for mobile devices */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons */
+    }
+
+    .button-container button {
+        width: 100%; /* Full width on mobile */
+        margin: 10px 0; /* Space between buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .button-container button {
+        padding: 12px; /* Reduced padding for better fit */
+    }
+}

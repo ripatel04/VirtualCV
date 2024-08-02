@@ -78,6 +78,7 @@ header {
 .introduction {
     max-width: 600px; /* Limit width for better readability */
 }
+
 .portfolio-section {
     display: none; /* Hide all sections by default */
     padding: 20px;
@@ -533,10 +534,37 @@ main {
         margin: 10px 0; /* Space between buttons */
         padding: 12px; /* Adjust padding for better fit */
     }
+
+    .profile-container {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center align items */
+        margin: 20px 0; /* Adjust margin for mobile */
+    }
+
+    .profile-image {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add space below the image */
+        width: 200px; /* Adjust size for mobile */
+        height: 200px; /* Adjust size for mobile */
+    }
+
+    .introduction {
+        text-align: center; /* Center text for better readability */
+        max-width: 90%; /* Limit width for better fit on mobile */
+    }
 }
 
 @media (max-width: 480px) {
     .header-content h1 {
         font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .profile-image {
+        width: 150px; /* Further reduce size for very small screens */
+        height: 150px; /* Further reduce size for very small screens */
+    }
+
+    .introduction {
+        font-size: 14px; /* Smaller font size for mobile */
     }
 }

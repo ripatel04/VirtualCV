@@ -50,11 +50,12 @@
     .floating-icons.show {
         opacity: 1; /* Show when .show class is added */
         pointer-events: auto; /* Enable pointer events */
+        transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth transition */
     }
 
     .floating-icons i {
         font-size: 36px;
-        color: #4A90E2;
+        color:black;
         transition: transform 0.3s;
         animation: float 3s ease-in-out infinite;
     }
@@ -139,7 +140,8 @@
                 animation: bounce 1s infinite;
             }
         </style>
-        <section id="resume" class="portfolio-section" style="display: none;">
+         
+         <section id="resume" class="portfolio-section" style="display: none;">
             <h2>Resume/CV</h2>
             
             <p class="cv-link"><a href="Curriculum Vitae of Riya Patel.pdf" target="_blank">Click here to view full CV</a></p>
@@ -277,7 +279,7 @@
             </ul>
         </section>
 
-        <div class="floating-icons" id="floating-icons">
+        <div class="floating-icons" id="floating-icons" style="display: none;">
                     <i class="fas fa-certificate" title="Certification"></i>
                     <i class="fas fa-laptop" title="Tech Support"></i>
                     <i class="fas fa-graduation-cap" title="Education"></i>
@@ -358,21 +360,37 @@
     </footer>
 
     <script>
-      // Function to show a specific section
-      function showSection(sectionId) {
+        // Function to show a specific section
+        function showSection(sectionId) {
             const sections = document.querySelectorAll('.portfolio-section');
             sections.forEach(section => {
                 section.style.display = 'none'; // Hide all sections
             });
-            document.getElementById(sectionId).style.display = 'block'; // Show the selected section
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
+            //document.getElementById(sectionId).style.display = 'block'; // Show the selected section
+            //document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
             
-            // Show floating icons when certifications section is displayed
-            if (sectionId === 'certifications') {
-                const floatingIcons = document.getElementById('floating-icons');
-                floatingIcons.classList.add('show');
-            }
-        }
+            // Apply animation to images in the selected section
+            const images = document.querySelectorAll(`#${sectionId} .interest-image`);
+            images.forEach((image, index) => {
+                setTimeout(() => {
+                    image.classList.add('slide-down');
+                }, index * 500); // Delay each image by 500ms
+            });
+
+            const selectedSection = document.getElementById(sectionId);
+    selectedSection.style.display = 'block'; // Show the selected section
+    selectedSection.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
+
+        // Show floating icons only in the "Certifications" section
+    const floatingIcons = document.getElementById('floating-icons');
+    if (sectionId === 'certifications') {
+        floatingIcons.style.display = 'flex'; // Show floating icons
+        floatingIcons.classList.add('show'); // Add show class to trigger animation
+    } else {
+        floatingIcons.style.display = 'none'; // Hide floating icons
+        floatingIcons.classList.remove('show'); // Remove show class
+    }
+}
         
         // Initially hide all sections except the introduction
         document.querySelectorAll('.portfolio-section').forEach(section => {
@@ -381,8 +399,8 @@
         
         // Optionally show the first section by default
         document.getElementById('home').style.display = 'block'; // Show the home section by default
-        
     </script>
+
 </body>
 </html>
 

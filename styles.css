@@ -62,7 +62,7 @@ header {
     justify-content: center;
     align-items: flex-start;
     margin: 40px 0; /* Space above and below */
-    animation: zoomIn 1s ease-in-out; /* Apply the animation */
+    animation: zoomIn 2s ease-in-out; /* Apply the animation */
 }
 
 .profile-image {
@@ -88,6 +88,7 @@ header {
 }
 #home h1, #home h2 {
     color: black; /* Black for front page headings */
+    animation: slideInFromRight 2s ease forwards;
 }
 
 /* Style for section headings */
@@ -216,9 +217,8 @@ p {
     opacity: 1; /* Make visible */
     transform: translateY(0); /* Move to original position */
 }
-
 footer {
-    position: fixed;
+    position: fixed; /* Keep the footer fixed at the bottom */
     bottom: 0;
     width: 100%;
     background-color: #333;
@@ -227,12 +227,11 @@ footer {
     text-align: center;
     z-index: 1;
 }
-
 footer * {
     color: #fff; /* This ensures all text within the footer is white */
 }
 main {
-    margin-bottom: 80px; /* Space for footer */
+    margin-bottom: 80px; /* Adjust this value to match the footer height */
 }
 
 .projects-container {
@@ -572,5 +571,16 @@ main {
         margin-left: 20px; /* Adjust margin for mobile screens */
         margin-right: 20px; /* Add some right margin */
         text-align: center; /* Center the link on mobile */
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%); /* Start off-screen to the left */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateX(0); /* End at its original position */
+        opacity: 1; /* End fully visible */
     }
 }
